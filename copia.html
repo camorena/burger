@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 10;
+      }
+
+      .bg {
+        /* The image used */
+        background-image: url("public/assets/images/bg.png");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #myAnimation {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-image: url("public/assets/images/burger.jpg");
+      }
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .container img {
+        width: 100%;
+        height: auto;
+      }
+
+      .container .btn {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: green;
+        color: orange;
+        font-size: 12px;
+        padding: 1px 2px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50px;
+        text-align: center;
+      }
+
+      .container .btn:hover {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="row"></div>
+      <div class="row">
+        <div id="myContainer">
+          <div id="myAnimation"></div>
+        </div>
+      </div>
+      <p>
+        <button onclick="myMove()">Click Me</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    function myMove() {
+      var elem = document.getElementById("myAnimation");
+      var pos = 100;
+      elem.style.top = 560 + "px";
+      var id = setInterval(frame, 10);
+      function frame() {
+        if (pos == 850) {
+          clearInterval(id);
+        } else {
+          pos++;
+          //elem.style.top = pos + "px";
+          console.log("pos :", pos);
+          elem.style.left = pos + "px";
+        }
+      }
+    }
+  </script>
+</html>

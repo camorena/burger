@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 10;
+      }
+
+      .bg {
+        /* The image used */
+        background-image: url("public/assets/images/bg.png");
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #myAnimation {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        background-image: url("public/assets/images/burger.jpg");
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .container img {
+        width: 100%;
+        height: auto;
+      }
+
+      .container .btn {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: green;
+        color: orange;
+        font-size: 12px;
+        padding: 1px 2px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50px;
+        text-align: center;
+      }
+
+      .container .btn:hover {
+        background-color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bg">
+      <div class="row"></div>
+      <div class="row">
+        <div id="burgers"></div>
+      </div>
+      <p>
+        <button onclick="myMove()">Click Me</button>
+      </p>
+    </div>
+  </body>
+  <script>
+    function showBurger() {
+      for (var i = 0; i < numberOptions.length; i++) {
+        // For each iteration, we will create an imageCrystal
+        var bgImg = $("<img>");
+
+        // First each crystal will be given the class ".crystal-image".
+        // This will allow the CSS to take effect.
+        bgImg.addClass("burger-devoure");
+
+        // Each imageCrystal will be given a src link to the crystal image
+        bgImg.attr(
+          "src",
+          "https://us.123rf.com/450wm/juliarstudio/juliarstudio1601/juliarstudio160102455/51730485-hamburger-sign-in-cartoon-style-on-transparent-background.jpg?ver=6"
+        );
+
+        // Each imageCrystal will be given a data attribute called data-crystalValue.
+        // This data attribute will be set equal to the array value.
+        bgImg.attr("data-bgId", numberOptions[i]);
+        bgImg.attr("style", "width:100%");
+        bgImg.attr("alt", "devoure it");
+
+        // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
+        $("#burgers").append(bgImg);
+      }
+    }
+  </script>
+</html>
