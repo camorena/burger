@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
     <style>
       body,
       html {
@@ -11,7 +11,7 @@
 
       .bg {
         /* The image used */
-        background-image: url("public/assets/images/bg.png");
+        background-image: url("../public/assets/images/bg.png");
 
         /* Full height */
         height: 100%;
@@ -22,13 +22,9 @@
         background-size: cover;
       }
 
-      #myAnimation {
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        background-image: url("public/assets/images/burger.jpg");
+      #big {
+        margin-top: 500px;
       }
-
       .container {
         position: relative;
         width: 100%;
@@ -38,6 +34,9 @@
       .container img {
         width: 100%;
         height: auto;
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
       }
 
       .container .btn {
@@ -60,44 +59,59 @@
         background-color: blue;
       }
     </style>
+    <title>Eat da Burger</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/public/assets/js/burgers.js"></script>
   </head>
-
   <body>
     <div class="bg">
-      <div class="row"></div>
+      <div id="big" class="row"></div>
       <div class="row">
-        <div id="burgers"></div>
+        <div class="container">
+          <body>
+            <div class="bg">
+              <div id="big" class="row"></div>
+              <div class="row">
+                <div class="container">
+                  <form action="/api/burgers/4" method="POST">
+                    <label> Cheeese</label>
+                    <img
+                      src="../public/assets/images/img.png"
+                      alt="Burger"
+                      style="width:100%"
+                    />
+                    <button data-id="4" class="btn" name="devour" value="4">
+                      Devour
+                    </button>
+                  </form>
+                  <form action="/api/burgers/5" method="POST">
+                    <label> Bacon</label>
+                    <img
+                      src="../public/assets/images/img.png"
+                      alt="Burger"
+                      style="width:100%"
+                    />
+                    <button data-id="5" class="btn" name="devour" value="5">
+                      Devour
+                    </button>
+                  </form>
+                  <form action="/api/burgers/6" method="POST">
+                    <label> Joe </label>
+                    <img
+                      src="../public/assets/images/img.png"
+                      alt="Burger"
+                      style="width:100%"
+                    />
+                    <button data-id="6" class="btn" name="devour" value="6">
+                      Devour
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </body>
+        </div>
       </div>
-      <p>
-        <button onclick="myMove()">Click Me</button>
-      </p>
     </div>
   </body>
-  <script>
-    function showBurger() {
-      for (var i = 0; i < numberOptions.length; i++) {
-        // For each iteration, we will create an imageCrystal
-        var bgImg = $("<img>");
-
-        // First each crystal will be given the class ".crystal-image".
-        // This will allow the CSS to take effect.
-        bgImg.addClass("burger-devoure");
-
-        // Each imageCrystal will be given a src link to the crystal image
-        bgImg.attr(
-          "src",
-          "https://us.123rf.com/450wm/juliarstudio/juliarstudio1601/juliarstudio160102455/51730485-hamburger-sign-in-cartoon-style-on-transparent-background.jpg?ver=6"
-        );
-
-        // Each imageCrystal will be given a data attribute called data-crystalValue.
-        // This data attribute will be set equal to the array value.
-        bgImg.attr("data-bgId", numberOptions[i]);
-        bgImg.attr("style", "width:100%");
-        bgImg.attr("alt", "devoure it");
-
-        // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-        $("#burgers").append(bgImg);
-      }
-    }
-  </script>
 </html>

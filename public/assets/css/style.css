@@ -6,26 +6,35 @@ html {
 
 .bg {
   /* The image used */
-  background-image: url("public/assets/images/bg.png");
-
+  background-image: url("/assets/images/bg.png");
   /* Full height */
   height: 100%;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 100px;
+.column-b {
+  float: left;
+  width: 15%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .container img {
   width: 100%;
   height: auto;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
 }
 
 .container .btn {
@@ -36,14 +45,52 @@ html {
   -ms-transform: translate(-50%, -50%);
   background-color: green;
   color: orange;
-  font-size: 12px;
   padding: 1px 2px;
   border: none;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 60px;
   text-align: center;
 }
 
-.container .btn:hover {
-  background-color: blue;
+.button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+}
+
+.button4 {
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color: rgb(255, 0, 140);
+}
+
+#new-burger {
+  padding-top: 560px;
+  padding-left: 50px;
+}
+
+#eat-burger {
+  padding-top: 550px;
+}
+
+#list-burger {
+  float: left;
+  width: 50%;
+  background-color: whitesmoke;
+}
+
+.col-6 {
+  float: left;
+  width: 10%;
+  padding: 5px;
+}
+
+.create-form {
+  background-color: azure;
 }
